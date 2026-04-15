@@ -1,0 +1,21 @@
+{
+  "id": "sess-tencent-dingtalk-demo",
+  "source": {
+    "platform": "tencent",
+    "meetingId": "888-888-888",
+    "password": "123456",
+    "displayName": "Open Meeting Tencent"
+  },
+  "target": {
+    "platform": "dingtalk",
+    "meetingId": "abcde12345",
+    "password": "",
+    "displayName": "Open Meeting DingTalk"
+  },
+  "options": {
+    "enableAudio": true,
+    "enableVideo": true,
+    "enableAec": false,
+    "dryRun": true
+  }
+}

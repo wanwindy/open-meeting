@@ -1,0 +1,27 @@
+services:
+  control-plane:
+    build:
+      context: ../..
+      dockerfile: infra/docker/Dockerfile.control
+    environment:
+      CONTROL_PLANE_ADDR: ":8080"
+      CONTROL_PLANE_WORKER_TOKEN: "dev-worker-token"
+    ports:
+      - "8080:8080"
+    mem_limit: 512m
+    cpus: 1.0
+
+  worker:
+    build:
+      context: ../..
+      dockerfile: infra/docker/Dockerfile.worker
+    depends_on:
+      - control-plane
+    environment:
+      CONTROL_PLANE_URL: "http://control-plane:8080"
+      WORKER_GRPC_BIND: "0.0.0.0:50051"
+      WORKER_GRPC_ADVERTISE: "worker:50051"
+      WORKER_GRPC_TOKEN: "dev-worker-token"
+      NODE_ID: "worker-1"
+    mem_limit: 4g
+    cpus: 2.0

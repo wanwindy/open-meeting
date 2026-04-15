@@ -1,0 +1,128 @@
+{
+  "tencent": {
+    "joinUrlTemplate": "https://meeting.tencent.com/wc/{meetingId}",
+    "browser": {
+      "windowWidth": 1280,
+      "windowHeight": 720
+    },
+    "selectors": {
+      "browserEntryButton": "text=/浏览器入会|继续使用浏览器/i",
+      "displayNameInput": "input[placeholder*='昵称'], input[placeholder*='姓名']",
+      "meetingPasswordInput": "input[type='password']",
+      "joinButton": "button:has-text('加入会议'), button:has-text('入会')",
+      "muteButton": "[aria-label*='静音'], button:has-text('静音')",
+      "cameraButton": "[aria-label*='摄像头'], button:has-text('摄像头')",
+      "participantCount": "[data-testid='participants-count'], .participant-count",
+      "meetingEndedBanner": "text=/会议已结束|会议结束|已离开会议/i",
+      "leaveButton": "button:has-text('离开会议')"
+    }
+  },
+  "dingtalk": {
+    "joinUrlTemplate": "https://h.dingtalk.com/circle/joinMeeting?meetingId={meetingId}",
+    "browser": {
+      "windowWidth": 1280,
+      "windowHeight": 720
+    },
+    "selectors": {
+      "browserEntryButton": "text=/浏览器打开|继续访问/i",
+      "displayNameInput": "input[placeholder*='昵称'], input[placeholder*='姓名']",
+      "meetingPasswordInput": "input[type='password']",
+      "joinButton": "button:has-text('加入会议'), button:has-text('立即加入')",
+      "muteButton": "[aria-label*='静音'], button:has-text('静音')",
+      "cameraButton": "[aria-label*='摄像头'], button:has-text('摄像头')",
+      "participantCount": "[data-testid='participants-count'], .participant-count",
+      "meetingEndedBanner": "text=/会议已结束|会议结束|已离开会议/i",
+      "leaveButton": "button:has-text('离开会议')"
+    }
+  },
+  "feishu": {
+    "joinUrlTemplate": "https://vc.feishu.cn/j/{meetingId}",
+    "browser": {
+      "windowWidth": 1280,
+      "windowHeight": 720
+    },
+    "selectors": {
+      "browserEntryButton": "text=/使用浏览器加入|继续访问/i",
+      "displayNameInput": "input[placeholder*='昵称'], input[placeholder*='姓名']",
+      "meetingPasswordInput": "input[type='password']",
+      "joinButton": "button:has-text('加入会议'), button:has-text('加入')",
+      "muteButton": "[aria-label*='静音'], button:has-text('静音')",
+      "cameraButton": "[aria-label*='摄像头'], button:has-text('摄像头')",
+      "participantCount": "[data-testid='participants-count'], .participant-count",
+      "meetingEndedBanner": "text=/会议已结束|会议结束|已离开会议/i",
+      "leaveButton": "button:has-text('离开会议')"
+    }
+  },
+  "lark": {
+    "joinUrlTemplate": "https://vc.larksuite.com/j/{meetingId}",
+    "browser": {
+      "windowWidth": 1280,
+      "windowHeight": 720
+    },
+    "selectors": {
+      "browserEntryButton": "text=/使用浏览器加入|继续访问/i",
+      "displayNameInput": "input[placeholder*='昵称'], input[placeholder*='姓名']",
+      "meetingPasswordInput": "input[type='password']",
+      "joinButton": "button:has-text('Join'), button:has-text('加入会议')",
+      "muteButton": "[aria-label*='Mute'], [aria-label*='静音'], button:has-text('静音')",
+      "cameraButton": "[aria-label*='Camera'], [aria-label*='摄像头'], button:has-text('摄像头')",
+      "participantCount": "[data-testid='participants-count'], .participant-count",
+      "meetingEndedBanner": "text=/会议已结束|Meeting ended|已离开会议/i",
+      "leaveButton": "button:has-text('离开会议'), button:has-text('Leave')"
+    }
+  },
+  "zhumu": {
+    "joinUrlTemplate": "https://zhumu.me/join/{meetingId}",
+    "browser": {
+      "windowWidth": 1280,
+      "windowHeight": 720
+    },
+    "selectors": {
+      "browserEntryButton": "text=/使用浏览器加入|继续访问/i",
+      "displayNameInput": "input[placeholder*='昵称'], input[placeholder*='姓名']",
+      "meetingPasswordInput": "input[type='password']",
+      "joinButton": "button:has-text('加入会议'), button:has-text('Join')",
+      "muteButton": "[aria-label*='Mute'], [aria-label*='静音'], button:has-text('静音')",
+      "cameraButton": "[aria-label*='Start Video'], [aria-label*='摄像头'], button:has-text('摄像头')",
+      "participantCount": "[data-testid='participants-count'], .participant-count",
+      "meetingEndedBanner": "text=/会议已结束|Meeting ended|已离开会议/i",
+      "leaveButton": "button:has-text('离开会议'), button:has-text('Leave')"
+    }
+  },
+  "huawei": {
+    "joinUrlTemplate": "https://bmeeting.huaweicloud.com/welink/#/{meetingId}",
+    "browser": {
+      "windowWidth": 1280,
+      "windowHeight": 720
+    },
+    "selectors": {
+      "browserEntryButton": "text=/使用浏览器加入|继续访问/i",
+      "displayNameInput": "input[placeholder*='昵称'], input[placeholder*='姓名']",
+      "meetingPasswordInput": "input[type='password']",
+      "joinButton": "button:has-text('加入会议'), button:has-text('Join')",
+      "muteButton": "[aria-label*='静音'], button:has-text('静音')",
+      "cameraButton": "[aria-label*='摄像头'], button:has-text('摄像头')",
+      "participantCount": "[data-testid='participants-count'], .participant-count",
+      "meetingEndedBanner": "text=/会议已结束|Meeting ended|已离开会议/i",
+      "leaveButton": "button:has-text('离开会议'), button:has-text('Leave')"
+    }
+  },
+  "welink": {
+    "joinUrlTemplate": "https://bmeeting.huaweicloud.com/welink/#/{meetingId}",
+    "browser": {
+      "windowWidth": 1280,
+      "windowHeight": 720
+    },
+    "selectors": {
+      "browserEntryButton": "text=/使用浏览器加入|继续访问/i",
+      "displayNameInput": "input[placeholder*='昵称'], input[placeholder*='姓名']",
+      "meetingPasswordInput": "input[type='password']",
+      "joinButton": "button:has-text('加入会议'), button:has-text('Join')",
+      "muteButton": "[aria-label*='静音'], button:has-text('静音')",
+      "cameraButton": "[aria-label*='摄像头'], button:has-text('摄像头')",
+      "participantCount": "[data-testid='participants-count'], .participant-count",
+      "meetingEndedBanner": "text=/会议已结束|Meeting ended|已离开会议/i",
+      "leaveButton": "button:has-text('离开会议'), button:has-text('Leave')"
+    }
+  }
+}

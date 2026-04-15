@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package openmeeting.worker.v1;
+
+service WorkerService {
+  rpc StartSession(StartSessionRequest) returns (StartSessionResponse);
+  rpc StopSession(StopSessionRequest) returns (StopSessionResponse);
+  rpc GetSessionStatus(SessionStatusRequest) returns (SessionStatusResponse);
+  rpc Heartbeat(HeartbeatRequest) returns (HeartbeatResponse);
+}
+
+message MeetingEndpoint {
+  string platform = 1;
+  string meeting_id = 2;
+  string password = 3;
+  string display_name = 4;
+  string meeting_url = 5;
+}
+
+message SessionOptions {
+  bool enable_audio = 1;
+  bool enable_video = 2;
+  bool enable_aec = 3;
+  bool dry_run = 4;
+  string trace_id = 5;
+  string webhook_url = 6;
+  int32 max_reconnect_attempts = 7;
+}
+
+message StartSessionRequest {
+  string session_id = 1;
+  MeetingEndpoint source = 2;
+  MeetingEndpoint target = 3;
+  SessionOptions options = 4;
+}
+
+message StartSessionResponse {
+  string session_id = 1;
+  string status = 2;
+  string trace_id = 3;
+}
+
+message StopSessionRequest {
+  string session_id = 1;
+  string reason = 2;
+}
+
+message StopSessionResponse {
+  string session_id = 1;
+  string status = 2;
+}
+
+message SessionStatusRequest {
+  string session_id = 1;
+}
+
+message SessionStatusResponse {
+  string session_id = 1;
+  string status = 2;
+  string trace_id = 3;
+  string message = 4;
+}
+
+message HeartbeatRequest {
+  string node_id = 1;
+}
+
+message HeartbeatResponse {
+  string node_id = 1;
+  string status = 2;
+  int32 active_sessions = 3;
+}

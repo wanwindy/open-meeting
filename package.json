@@ -1,0 +1,13 @@
+{
+  "name": "open-meeting",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/worker"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace @open-meeting/worker",
+    "dev:worker": "npm run dev --workspace @open-meeting/worker"
+  }
+}
+
