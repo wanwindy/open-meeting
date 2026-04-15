@@ -32,6 +32,15 @@
 5. 然后执行 `go build ./cmd/server`
 6. 参考 `infra/docker/docker-compose.yml` 在 Linux 宿主机启动容器环境
 
+如果在容器构建阶段访问 `proxy.golang.org` 超时，control-plane 镜像现在默认走国内可访问的 Go 模块镜像：
+
+```bash
+CONTROL_PLANE_GOPROXY=https://goproxy.cn,direct
+CONTROL_PLANE_GOSUMDB=sum.golang.google.cn
+```
+
+如需替换成你自己的镜像，只要在执行 `docker compose build` 或 `docker compose up --build` 前覆盖这两个环境变量即可。
+
 ## MVP 运行方式
 
 MVP 提供两种入口：

@@ -3,6 +3,9 @@ services:
     build:
       context: ../..
       dockerfile: infra/docker/Dockerfile.control
+      args:
+        GOPROXY: "${CONTROL_PLANE_GOPROXY:-https://goproxy.cn,direct}"
+        GOSUMDB: "${CONTROL_PLANE_GOSUMDB:-sum.golang.google.cn}"
     environment:
       CONTROL_PLANE_ADDR: ":8080"
       CONTROL_PLANE_WORKER_TOKEN: "dev-worker-token"
