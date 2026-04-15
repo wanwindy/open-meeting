@@ -28,8 +28,9 @@
 1. 安装 Node.js 24+ 和 Go 1.24+
 2. 在仓库根目录执行 `npm install`
 3. 构建 Worker：`npm run build --workspace @open-meeting/worker`
-4. 进入 `apps/control-plane` 后执行 `go build ./cmd/server`
-5. 参考 `infra/docker/docker-compose.yml` 在 Linux 宿主机启动容器环境
+4. 首次在新环境构建 control-plane 前，先进入 `apps/control-plane` 执行 `go mod tidy`
+5. 然后执行 `go build ./cmd/server`
+6. 参考 `infra/docker/docker-compose.yml` 在 Linux 宿主机启动容器环境
 
 ## MVP 运行方式
 
